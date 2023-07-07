@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Crop App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 200px;
+            max-height: 200px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Crop App</h1>
+
+    <h2>Crop Image</h2>
+    <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Cropped Image">
+    <form action="/crop/{{ filename }}" method="POST">
+        <label for="size">Crop Size (pixels):</label>
+        <input type="number" name="size" id="size" required>
+        <br>
+        <label for="position">Crop Position:</label>
+        <select name="position" id="position" required>
+            <option value="top_left">Top Left</option>
+            <option value="top_center">Top Center</option>
+            <option value="top_right">Top Right</option>
+            <option value="center_left">Center Left</option>
+            <option value="center">Center</option>
+            <option value="center_right">Center Right</option>
+            <option value="bottom_left">Bottom Left</option>
+            <option value="bottom_center">Bottom Center</option>
+            <option value="bottom_right">Bottom Right</option>
+        </select>
+        <br>
+        <input type="submit" value="Crop Image">
+    </form>
+</body>
+</html>

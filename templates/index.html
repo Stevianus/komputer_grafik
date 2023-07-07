@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Crop App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .navbar h1 {
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        hr {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        ul.messages {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        ul.messages li {
+            color: red;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Image Crop App</h1>
+    </div>
+    <h1>Selamat Datang di Image Crop App</h1>
+    <hr>
+    <h2>
+        <p style="text-align: left;">Nama: Stevianus Imanuel Salangka</p>
+        <p style="text-align: left;">NIM: 201011401550</p>
+        <p style="text-align: left;">Kelas: 06PTLE004</p>
+    </h2>
+    <hr>
+    <br><br>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="/" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="file">Pilih File:</label>
+                        <input type="file" class="form-control-file" name="file" accept=".jpg, .jpeg, .png">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
