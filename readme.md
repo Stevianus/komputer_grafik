@@ -24,7 +24,7 @@ Ikuti langkah-langkah di bawah ini untuk menggunakan aplikasi ini:
 3. Buka terminal dan arahkan ke direktori proyek.
 4. Instal dependensi dengan menjalankan perintah pip install -r requirements.txt.
 5. Jalankan server dengan perintah python main.py.
-6. Buka browser dan akses http://localhost:5000.
+6. Buka browser dan akses http://localhost:8000.
 7. Unggah gambar yang ingin Anda crop.
 8. Tentukan ukuran dan posisi crop.
 9. Klik tombol "Crop Image" untuk memotong gambar.
